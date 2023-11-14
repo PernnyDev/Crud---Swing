@@ -11,7 +11,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class AddressSetupForm extends JFrame {
-    private JTextField streetField;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField streetField;
     private JTextField numberField;
     private JTextField neighborhoodField;
     private JTextField complementField;
@@ -55,6 +59,25 @@ public class AddressSetupForm extends JFrame {
         JButton setupAddressButton = new JButton("Setup Address");
         add(setupAddressButton);
 
+		/*
+		 * setupAddressButton.addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { // Handle address
+		 * setup here String street = streetField.getText(); String number =
+		 * numberField.getText(); String neighborhood = neighborhoodField.getText();
+		 * String complement = complementField.getText(); String city =
+		 * cityField.getText(); String state = stateField.getText(); String country =
+		 * countryField.getText();
+		 * 
+		 * // You can process the address details as needed
+		 * System.out.println("Address set up with the following details:");
+		 * System.out.println("Street: " + street); System.out.println("Number: " +
+		 * number); System.out.println("Neighborhood: " + neighborhood);
+		 * System.out.println("Complement: " + complement); System.out.println("City: "
+		 * + city); System.out.println("State: " + state);
+		 * System.out.println("Country: " + country); } });
+		 */
+        
         setupAddressButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,6 +99,17 @@ public class AddressSetupForm extends JFrame {
                 System.out.println("City: " + city);
                 System.out.println("State: " + state);
                 System.out.println("Country: " + country);
+
+                // Feche a janela atual
+                dispose();
+
+                // Abra a nova janela
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new TelaExibicao(UserLoginForm.mockUserDatabase);  // Substitua mockUserDatabase pelo seu banco de dados de usuários
+                    }
+                });
             }
         });
 

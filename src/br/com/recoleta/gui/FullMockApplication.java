@@ -15,7 +15,7 @@ public class FullMockApplication {
                 List<User> mockUserDatabase = new ArrayList<>();
 
                 
-                UserLoginForm loginForm = new UserLoginForm(mockUserDatabase, null);
+                UserLoginForm loginForm = new UserLoginForm(mockUserDatabase);
                 /*UserRegistrationForm registrationForm = new UserRegistrationForm(mockUserDatabase);
                 CollectionForm collectionForm = new CollectionForm(); // If applicable
                 AddressSetupForm addressSetupForm = new AddressSetupForm(); // If applicable*/

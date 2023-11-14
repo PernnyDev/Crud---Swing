@@ -73,5 +73,21 @@ public class User {
 	
 	public User() {
 	}
+	public String getAddress() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getCity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getCountry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

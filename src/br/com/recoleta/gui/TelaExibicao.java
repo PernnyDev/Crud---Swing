@@ -2,7 +2,7 @@ package br.com.recoleta.gui;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
+import java.util.ArrayList;
 import br.com.recoleta.enums.UserType;
 import br.com.recoleta.model.User;
 import java.awt.*;
@@ -21,7 +21,8 @@ public class TelaExibicao extends JFrame {
 	public TelaExibicao(List<User> userList) {
 		if (userList == null) {
 			// Caso a lista seja nula, inicialize-a vazia ou trate conforme necessário
-			userList = List.of();
+			userList = new ArrayList<>();
+
 		}
 
 		setTitle("Lista de Usuários");
@@ -138,10 +139,10 @@ public class TelaExibicao extends JFrame {
 
 		// Adiciona os botões abaixo da tabela
 		JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		buttonPanel.add(deleteButton);
-		buttonPanel.add(registerButton);
-		buttonPanel.add(returnToLoginButton);
+		buttonPanel.add(registerButton);	
 		buttonPanel.add(editButton);
+		buttonPanel.add(deleteButton);
+		buttonPanel.add(returnToLoginButton);
 		add(buttonPanel, BorderLayout.SOUTH);
 
 		pack();

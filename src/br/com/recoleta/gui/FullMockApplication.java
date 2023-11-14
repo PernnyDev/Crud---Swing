@@ -16,9 +16,15 @@ public class FullMockApplication {
 
                 
                 UserLoginForm loginForm = new UserLoginForm(mockUserDatabase);
+                /*UserRegistrationForm registrationForm = new UserRegistrationForm(mockUserDatabase);
+                CollectionForm collectionForm = new CollectionForm(); // If applicable
+                AddressSetupForm addressSetupForm = new AddressSetupForm(); // If applicable*/
 
+                // You can manage the flow of your application, e.g., show login form initially
                 loginForm.setVisible(true);
-
+               /* registrationForm.setVisible(false);
+                collectionForm.setVisible(false);
+                addressSetupForm.setVisible(false);*/
             }
         });
     }

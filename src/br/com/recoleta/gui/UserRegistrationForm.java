@@ -73,7 +73,7 @@ public class UserRegistrationForm extends JFrame {
                 UserType userType = producesWasteRadioButton.isSelected() ? UserType.PRODUCES_WASTE : UserType.COLLECTS_WASTE;
 
                 // Verifique se os campos estão em branco
-                if (name.isBlank() || email.isBlank() || password.isBlank()) {
+                if (name.trim().isEmpty() || email.trim().isEmpty() || password.trim().isEmpty()) {
                     passwordErrorLabel.setText("Todos os campos são obrigatórios.");
                 } else if (!name.matches("[a-zA-Z]+")) {
                     passwordErrorLabel.setText("O campo 'Name' deve conter apenas letras.");

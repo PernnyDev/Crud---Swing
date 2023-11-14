@@ -70,8 +70,8 @@ public class AddressSetupForm extends JFrame {
                 String country = countryField.getText();
 
                 // Realize validações
-                if (street.isBlank() || number.isBlank() || neighborhood.isBlank() || city.isBlank() || state.isBlank() || country.isBlank()) {
-                    errorLabel.setText("Todos os campos são obrigatórios.");
+                if (street.trim().isEmpty() || number.trim().isEmpty() || neighborhood.trim().isEmpty() || city.trim().isEmpty() || state.trim().isEmpty() || country.trim().isEmpty()) {
+                     errorLabel.setText("Todos os campos são obrigatórios.");
                 } else if (!number.matches("\\d+")) {
                     errorLabel.setText("O campo 'Number' deve conter apenas dígitos numéricos.");
                 } else {

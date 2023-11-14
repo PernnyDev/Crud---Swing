@@ -18,7 +18,7 @@ import br.com.recoleta.model.User;
 public class UserLoginForm extends JFrame {
     private static final long serialVersionUID = 1L;
     static List<User> mockUserDatabase;
-    private JLabel lblLogin, lblSenha;
+    private JLabel lblLogin, lblSenha, lblError;
     private JTextField txtLogin;
     private JPasswordField txtSenha;
     private JButton btnEntrar, btnRegistrar;
@@ -34,6 +34,13 @@ public class UserLoginForm extends JFrame {
         lblSenha = new JLabel("Senha: ");
         lblSenha.setBounds(12, 60, 200, 33);
         return lblSenha;
+    }
+
+    public JLabel getLblError() {
+        lblError = new JLabel("");
+        lblError.setForeground(Color.RED);
+        lblError.setBounds(12, 100, 250, 33);
+        return lblError;
     }
 
     public JTextField getTxtLogin() {
@@ -58,7 +65,10 @@ public class UserLoginForm extends JFrame {
                 String email = txtLogin.getText();
                 String password = new String(txtSenha.getPassword());
 
-                if (isLoginSuccessful(email, password)) {
+                // Verificar se os campos estão em branco
+                if (email.isBlank() || password.isBlank()) {
+                    lblError.setText("Todos os campos são obrigatórios.");
+                } else if (isLoginSuccessful(email, password)) {
                     // Log in the user and perform any necessary actions
                     JOptionPane.showMessageDialog(UserLoginForm.this, "Login successful.");
 
@@ -75,7 +85,7 @@ public class UserLoginForm extends JFrame {
                     txtSenha.setText("");
                 } else {
                     // Display an error message
-                    JOptionPane.showMessageDialog(UserLoginForm.this, "Login failed. Please check your credentials.");
+                    lblError.setText("Credenciais incorretas. Por favor, verifique e tente novamente.");
                 }
             }
         };
@@ -123,6 +133,7 @@ public class UserLoginForm extends JFrame {
         janela.getContentPane().add(getTxtSenha());
         janela.getContentPane().add(getBtnEntrar());
         janela.getContentPane().add(getBtnRegistrar());
+        janela.getContentPane().add(getLblError());
         janela.setVisible(true);
     }
 

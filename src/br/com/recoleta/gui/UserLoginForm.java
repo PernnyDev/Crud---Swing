@@ -39,7 +39,7 @@ public class UserLoginForm extends JFrame {
     public JLabel getLblError() {
         lblError = new JLabel("");
         lblError.setForeground(Color.RED);
-        lblError.setBounds(12, 100, 250, 33);
+        lblError.setBounds(50, 90, 250, 30);
         return lblError;
     }
 

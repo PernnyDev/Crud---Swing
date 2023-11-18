@@ -2,7 +2,6 @@ package br.com.recoleta.gui;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.SwingUtilities;
 
 import br.com.recoleta.model.User;

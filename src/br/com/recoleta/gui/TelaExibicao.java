@@ -139,7 +139,7 @@ public class TelaExibicao extends JFrame {
 
 		// Adiciona os botões abaixo da tabela
 		JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		buttonPanel.add(registerButton);	
+		buttonPanel.add(registerButton);
 		buttonPanel.add(editButton);
 		buttonPanel.add(deleteButton);
 		buttonPanel.add(returnToLoginButton);

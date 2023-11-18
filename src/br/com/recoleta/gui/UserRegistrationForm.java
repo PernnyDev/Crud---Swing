@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
 import br.com.recoleta.enums.UserType;
 import br.com.recoleta.model.User;
 
